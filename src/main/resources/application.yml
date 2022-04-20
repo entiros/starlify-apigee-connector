@@ -1,0 +1,5 @@
+apigee:
+  server:
+    url: https://apigee.googleapis.com/v1
+starlify:
+  url: https://api.starlify.com
