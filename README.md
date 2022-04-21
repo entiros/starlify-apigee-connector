@@ -1,40 +1,43 @@
-# Starlify connector for Apigee gateway
-Exports the api details to starlify as Service, Sysytem and Flow.
+# Starlify connector for Apigee Gateway
+Exports the API details to Starlify as systems and services.
 
 ## Dependencies
    1. Java-8 +
+   2. Maven
    
 ### spring-boot-starter-web
 For exposure of connector etc. on http.
 
 ## Configuration
-Make sure proper Apigee api gateway and starlify url's configured properly in properties file like this
+Put the text below in your property file to configure your URL for Apigee API Gateway and Starlify:
 
 ```
-		apigee:
-		  server:
-			url: http://localhost:8001
-		starlify:
-		  url: https://api.starlify.com
+apigee:
+	server:
+		url: http://localhost:8001
+starlify:
+		url: https://api.starlify.com
 ```
  
 ## Start
-First clone the project using below link
-     https://github.com/entiros/starlify-apigee-connector.git
+Start by cloning the project by using the link below:  
+https://github.com/entiros/starlify-apigee-connector.git
 
-Go to cleaned location and run below command to start the process
-	mvn clean spring-boot:run
+Go to cloned location and run the command below to start the process:
+```
+mvn clean spring-boot:run
+```
 
-## import Apigee api details to Starlify
-Use below endpoint to start importing api details to starlify as services, systems and flows 
+## Import Apigee API Gateway details to Starlify
+Use the endpoint below to start importing API details to Starlify as systems and services:
 
 ```
-	Method : POST
-	URL : http://localhost:8080/submitRequest
-	Body : 
-			{
-				"starlifyKey":"starlify-api-key",
-				"apiKey":"apigee-api-key",
-				"networkId":"starlify-network-id-to-create-services-systems-and-flows"
-			}
+Method : POST
+URL : http://localhost:8080/submitRequest
+Body : 
+	{
+		"starlifyKey":"starlify-api-key",
+		"apiKey":"apigee-api-key",
+		"networkId":"starlify-network-id-to-create-services-systems-and-flows"
+	}
 ```
